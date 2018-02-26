@@ -1,0 +1,58 @@
+.container
+  .row{:style => "margin-top:13px;"}
+    .col
+      .form-group
+        .input-group
+          .input-group-prepend
+            %span.input-group-text
+              %i.fa.fa-globe
+          %select.form-control#country-select{:placeholder => "Country", :type => "text"}
+            %option{value: "test", id: "1"}
+              United States
+            %option{value: "test2", id: "2"}
+              Germany
+      .form-group
+        .input-group
+          .input-group-prepend
+            %span.input-group-text
+              %i.fa.fa-search
+          %input.form-control#keyword-input{:placeholder => "Name / Address", :type => "text"}/
+  .row{:style => "margin-top:20px;"}
+    .col
+      %h4 Factories
+      %ul.list-group
+        %li.list-group-item
+          #accordion-1{:role => "tablist"}
+            .card.template
+              .card-header{:role => "tab"}
+                %h5.mb-0
+                  %a{"aria-controls" => "accordion-1 .item-1", "aria-expanded" => "true", "data-toggle" => "collapse", :href => "div#accordion-1 .item-1"} Xiangyi weaving CO.LTD
+              .collapse.show.item-1{"data-parent" => "#accordion-1", :role => "tabpanel"}
+                .card-body
+                  .table-responsive
+                    %table.table
+                      %thead
+                        %tr
+                          %th Brand
+                          %th Year
+                      %tbody
+                        %tr
+                          %td Apple Inc
+                          %td 2005
+                        %tr
+                          %td Google Inc
+                          %td 2010
+            .card
+              .card-header{:role => "tab"}
+                %h5.mb-0
+                  %a{"aria-controls" => "accordion-1 .item-2", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "div#accordion-1 .item-2"} Ningbo Haide Knitting Dyeing
+              .collapse.item-2{"data-parent" => "#accordion-1", :role => "tabpanel"}
+                .card-body
+                  %p.card-text Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
+            .card
+              .card-header{:role => "tab"}
+                %h5.mb-0
+                  %a{"aria-controls" => "accordion-1 .item-3", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "div#accordion-1 .item-3"} WANHE GARMENT COMPANY LIMITED
+              .collapse.item-3{"data-parent" => "#accordion-1", :role => "tabpanel"}
+                .card-body
+                  %p.card-text Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
