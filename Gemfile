@@ -11,7 +11,7 @@ group :development do
   gem 'rake', '~> 10.4'
   gem 'rspec', '~> 3.4'
   gem 'capybara', '~> 2.5'
-  gem 'capistrano-middleman'
+  gem 'capistrano'
   gem 'capistrano-rvm'
   gem "capistrano-bundler"
 end

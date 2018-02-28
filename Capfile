@@ -26,8 +26,7 @@ install_plugin Capistrano::SCM::Git
 require "capistrano/rvm"
 require "capistrano/bundler"
 #require "capistrano/maintenance"
-require "capistrano/middleman"
-#install_plugin Capistrano::Middleman
+#require "capistrano/middleman"
 require "airbrussh/capistrano"
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.

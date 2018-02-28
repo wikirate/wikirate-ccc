@@ -6,9 +6,7 @@ set :deploy_to, '/srv/wikirate_ccc'
 
 set :rvm_custom_path, '/usr/local/rvm'
 
-# set :passenger_restart_with_touch, true
-
-set :scm, :middleman
+# set :scm, :middleman
 
 # set :format, :pretty
 # set :log_level, :debug
@@ -21,10 +19,4 @@ set :scm, :middleman
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
 
-# ask :password, 'default', echo: false
 
-# Name of build_directory
-set :build_dir, 'build'
-
-# Name of source directory
-set :source_dir, 'source'
