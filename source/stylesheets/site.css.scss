@@ -7,6 +7,7 @@ body {
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   padding: 18vh 1rem;
   text-align: center;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 a {
@@ -16,6 +17,10 @@ a {
   &:hover {
     color: rgba(#000, 0.6);
   }
+}
+
+.input-group {
+  // flex-wrap: nowrap !important;
 }
 
 .middleman-logo {

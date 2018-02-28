@@ -8,9 +8,22 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    airbrussh (1.3.0)
+      sshkit (>= 1.6.1, != 1.7.0)
     autoprefixer-rails (8.0.0)
       execjs
     backports (3.11.1)
+    capistrano (3.10.1)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.3.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -28,7 +41,11 @@ GEM
     contracts (0.13.0)
     diff-lcs (1.3)
     dotenv (2.2.1)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.2.5)
     execjs (2.7.0)
     fast_blank (1.0.0)
     fastimage (2.1.1)
@@ -39,6 +56,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.5.7)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     kramdown (1.16.2)
     listen (3.0.8)
@@ -81,9 +99,16 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
+    middleman-livereload (3.4.6)
+      em-websocket (~> 0.5.1)
+      middleman-core (>= 3.3)
+      rack-livereload (~> 0.3.15)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     padrino-helpers (0.13.3.4)
@@ -95,6 +120,8 @@ GEM
     parallel (1.12.1)
     public_suffix (3.0.2)
     rack (2.0.4)
+    rack-livereload (0.3.16)
+      rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rake (10.5.0)
@@ -116,6 +143,9 @@ GEM
     rspec-support (3.7.1)
     sass (3.4.25)
     servolux (0.13.0)
+    sshkit (1.16.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     temple (0.8.0)
     thor (0.20.0)
     thread_safe (0.3.6)
@@ -131,9 +161,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano
+  capistrano-bundler
+  capistrano-rvm
   capybara (~> 2.5)
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
+  middleman-livereload
   rake (~> 10.4)
   rspec (~> 3.4)
   tzinfo-data
