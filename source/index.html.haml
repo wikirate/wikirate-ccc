@@ -1,6 +1,7 @@
 .container
   .row{:style => "margin-top:13px;"}
     .col
+      %h4 Search for factories
       .form-group
         .input-group
           .input-group-prepend
@@ -15,7 +16,7 @@
           %input.form-control#keyword-input{:placeholder => "Name / Address", :type => "text"}/
   .row{:style => "margin-top:20px;"}
     .col
-      %h4 Factories
+      %h5.result-header Found 0 factories
       %ul.list-group
         %li.list-group-item
           .card.template

@@ -37,6 +37,7 @@ updateSuppliedCompaniesTable = ($collapse) ->
 
 updateFactoryList = ->
   $.ajax(url: searchFactoriesURL(), dataType: "json").done((data) ->
+    $(".result-header").text("Found #{data.length} factor#{if data.length == 1 then "y" else "ies"}")
     $accordion = $("#search-result-accordion")
     $accordion.empty()
     if data.length == 0
