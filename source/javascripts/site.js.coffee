@@ -9,6 +9,7 @@ EMPTY_RESULT = "<div class='alert alert-info'>no result</div>"
 $(document).ready ->
   $("#country-select").select2
     placeholder: "Country"
+    allowClear: true
     ajax:
       url: "#{HOST}/jurisdiction.json?view=select2",
       dataType: "json"
@@ -37,10 +38,11 @@ updateSuppliedCompaniesTable = ($collapse) ->
 
 updateFactoryList = ->
   $.ajax(url: searchFactoriesURL(), dataType: "json").done((data) ->
+    $(".result-header").text("Found #{data.length} factor#{if data.length == 1 then "y" else "ies"}")
     $accordion = $("#search-result-accordion")
     $accordion.empty()
     if data.length == 0
-      $accordion.append(EMPTY_RESULT)
+      # $accordion.append(EMPTY_RESULT)
     else
       for factory in data
         addFactoryCard(factory, $accordion)

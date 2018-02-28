@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   background-color: #fbc547;
   color: #333;
@@ -19,14 +23,18 @@ a {
 }
 
 .input-group {
-  // flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+select {
+  width: 100%;
+  min-width: 100%;
 }
 
 .middleman-logo {
   margin-bottom: 1rem;
   width: 10rem;
 }
-
 
 .template {
   display: none !important;
