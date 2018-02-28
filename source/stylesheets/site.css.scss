@@ -20,7 +20,12 @@ a {
 }
 
 .input-group {
-  // flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+select {
+  width: 100%;
+  min-width: 100%;
 }
 
 .middleman-logo {
