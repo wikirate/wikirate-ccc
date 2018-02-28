@@ -25,5 +25,9 @@ a {
 
 
 .template {
-  display: none;
+  display: none !important;
+}
+
+.select2-results__options--nested {
+  margin-left: 15px !important;
 }
