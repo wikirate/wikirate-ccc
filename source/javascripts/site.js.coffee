@@ -46,7 +46,7 @@ updateFactoryList = ->
         addFactoryCard(factory, $accordion)
   )
 
-searchFactoriesURL() ->
+searchFactoriesURL = ->
   keyword = $("#keyword-input").val()
   selected = $("#country-select").select2("data")
   if (selected.length > 0)

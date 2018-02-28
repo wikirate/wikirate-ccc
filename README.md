@@ -24,5 +24,6 @@ bundle exec middleman server
 ```  
 
 The command returns a url where you can access the site.
-The server automatically picks up source changes. 
-You only have to refresh the browser.
+Middleman automatically picks up source changes and refreshes
+the site in the browser.
+
