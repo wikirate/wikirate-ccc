@@ -1,7 +1,7 @@
 $.fn.select2.defaults.set("theme", "bootstrap")
 
-#HOST = "http://staging.wikirate.org"
-HOST = "http://localhost:3000"
+HOST = "http://staging.wikirate.org"
+# HOST = "http://localhost:3000"
 METRIC_URL = "#{HOST}/Clean_Clothes_Campaign+Supplier_of"
 
 EMPTY_RESULT = "<div class='alert alert-info'>no result</div>"
