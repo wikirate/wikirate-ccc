@@ -59,7 +59,7 @@ addFactoryCard = (factory, $accordion) ->
   $card = $(".card.template").clone()
   collapse_class = "id-#{factory.id}"
   $card.removeClass("template")
-       .find("h5 > a").text(factory.name)
+       .find("a.card-header").text(factory.name)
                       .attr("href", "div#search-result-accordion .#{collapse_class}")
                       .attr("aria-controls", "search-result-accordion .#{collapse_class}")
   $card.find(".collapse").attr("data-company-url-key", factory.url_key)
