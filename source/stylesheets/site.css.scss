@@ -30,11 +30,11 @@ body {
 
 .input-group {
   flex-wrap: nowrap !important;
-}
 
-select#country-select {
-  width: 100%;
-  min-width: 100%;
+  select {
+    width: 100%;
+    min-width: 100%;
+  }
 }
 
 .template {

@@ -14,35 +14,16 @@ $(document).ready ->
       url: COUNTRY_OPTIONS_URL,
       dataType: "json"
 
-  $("body").on "select2:select", "#country-select", ->
-    updateFactoryList()
-
-  $("body").on "change", "#keyword-input", ->
+  $("body").on "change", "._factory-search", ->
     updateFactoryList()
 
   $("body").on 'shown.bs.collapse', ".collapse", ->
     updateSuppliedCompaniesTable($(this))
 
-updateSuppliedCompaniesTable = ($collapse) ->
-  loadOnlyOnce $collapse, ($collapse) ->
-    company_url_key = $collapse.data("company-url-key")
-    $.ajax(url: suppliedCompaniesSearchURL(company_url_key),
-           dataType: "json").done((data) ->
-      tbody = $collapse.find("tbody")
-      tbody.find("tr.loading").remove()
-      for company, year of data
-        row = $("<tr><td>#{company}</td><td>#{year.join(", ")}</td></tr>")
-        tbody.append row
-    )
-
-loadOnlyOnce = ($target, load) ->
-  return if $target.hasClass("_loaded")
-  $target.addClass("_loaded")
-  load($target)
-
 updateFactoryList = ->
   $.ajax(url: factorySearchURL(), dataType: "json").done((data) ->
-    $("._result-header").text("Found #{data.length} factor#{if data.length == 1 then "y" else "ies"}")
+    header = "Found #{data.length} factor#{if data.length == 1 then "y" else "ies"}"
+    $("._result-header").text(header)
     $accordion = $("#search-result-accordion")
     $accordion.empty()
     if data.length == 0
@@ -52,6 +33,20 @@ updateFactoryList = ->
         addFactoryCard(factory, $accordion)
   )
 
+updateSuppliedCompaniesTable = ($collapse) ->
+  loadOnlyOnce $collapse, ($collapse) ->
+    $.ajax(url: suppliedCompaniesSearchURL($collapse), dataType: "json").done((data) ->
+      tbody = $collapse.find("tbody")
+      tbody.find("tr.loading").remove()
+      for company, year of data
+        addRow tbody, company, year
+    )
+
+loadOnlyOnce = ($target, load) ->
+  return if $target.hasClass("_loaded")
+  $target.addClass("_loaded")
+  load($target)
+
 factorySearchURL = ->
   keyword = $("#keyword-input").val()
   selected = $("#country-select").select2("data")
@@ -59,7 +54,8 @@ factorySearchURL = ->
     country_code = selected[0].id
   "#{HOST}/company.json?view=search_factories&keyword=#{keyword}&country_code=#{country_code}"
 
-suppliedCompaniesSearchURL = (factory) ->
+suppliedCompaniesSearchURL = (elem) ->
+  factory = elem.data("company-url-key")
   "#{METRIC_URL}+#{factory}.json?view=related_companies_with_year"
 
 addFactoryCard = (factory, $accordion) ->
@@ -67,8 +63,11 @@ addFactoryCard = (factory, $accordion) ->
   collapse_class = "id-#{factory.id}"
   $card.removeClass("template")
        .find("a.card-header").text(factory.name)
-                      .attr("href", "div#search-result-accordion .#{collapse_class}")
-                      .attr("aria-controls", "search-result-accordion .#{collapse_class}")
+                             .attr("href", "div#search-result-accordion .#{collapse_class}")
+                             .attr("aria-controls", "search-result-accordion .#{collapse_class}")
   $card.find(".collapse").attr("data-company-url-key", factory.url_key)
                          .addClass(collapse_class)
   $accordion.append($card)
+
+addRow = (tbody, company, year) ->
+  tbody.append $("<tr><td>#{company}</td><td>#{year.join(", ")}</td></tr>")
