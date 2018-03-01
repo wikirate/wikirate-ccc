@@ -16,18 +16,18 @@
           %select.form-control#country-select{:placeholder => "Country", :type => "text"}
   .row{:style => "margin-top:20px;"}
     .col
-      %h5.font-weight-light.result-header.pb-2 Found 0 factories
+      %h5.font-weight-light.pb-2._result-header Found 0 factories
       %div.card.drop-shadow
         %div
-          .card.template
+          .card.template._factory-item
             %a.card-header.h5.font-weight-normal.list-group-item{"aria-expanded" => "false", "data-toggle" => "collapse", :href => "replaced_by_js", :role => "tab"}
-            .collapse.not-loaded{"data-parent" => "#search-result-accordion", :role => "tabpanel"}
+            .collapse{"data-parent" => "#search-result-accordion", :role => "tabpanel"}
               .card-body
                 .table-responsive
                   %table.table
                     %thead
                       %tr
-                        %th Brand
+                        %th Supplier of
                         %th Year
                     %tbody
                       %tr.loading
