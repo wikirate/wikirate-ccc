@@ -1,13 +1,13 @@
 .container
   .row{:style => "margin-top:13px;"}
     .col
-      %h4 Search for factories
+      %h5.font-weight-light.pb-2 Search
       .form-group
         .input-group
           .input-group-prepend
             %span.input-group-text
               %i.fa.fa-search
-          %input.form-control#keyword-input{:placeholder => "Name / Address", :type => "text"}
+          %input.form-control#keyword-input{:placeholder => "Name / Address of the factory", :type => "text"}
       .form-group
         .input-group
           .input-group-prepend
@@ -16,13 +16,11 @@
           %select.form-control#country-select{:placeholder => "Country", :type => "text"}
   .row{:style => "margin-top:20px;"}
     .col
-      %h5.result-header Found 0 factories
-      %ul.list-group
-        %li.list-group-item
+      %h5.font-weight-light.result-header.pb-2 Found 0 factories
+      %div.card.drop-shadow
+        %div
           .card.template
-            .card-header{:role => "tab"}
-              %h5.mb-0
-                %a{"aria-expanded" => "false", "data-toggle" => "collapse", :href => "replaced_by_js"}
+            %a.card-header.h5.font-weight-normal.list-group-item{"aria-expanded" => "false", "data-toggle" => "collapse", :href => "replaced_by_js", :role => "tab"}
             .collapse.not-loaded{"data-parent" => "#search-result-accordion", :role => "tabpanel"}
               .card-body
                 .table-responsive
