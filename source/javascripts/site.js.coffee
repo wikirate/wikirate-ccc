@@ -20,6 +20,16 @@ $(document).ready ->
   $("body").on 'shown.bs.collapse', ".collapse", ->
     updateSuppliedCompaniesTable($(this))
 
+  params = new URLSearchParams(window.location.search)
+
+  unless params.get('embed-info') == "show"
+    $("._embed-info").hide()
+
+  if params.has('background')
+    $('body').css("background", params.get("background"))
+
+
+
 updateFactoryList = ->
   $.ajax(url: factorySearchURL(), dataType: "json").done((data) ->
     header = "Found #{data.length} factor#{if data.length == 1 then "y" else "ies"}"
