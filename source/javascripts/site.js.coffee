@@ -83,4 +83,4 @@ addRow = (tbody, company, year) ->
   tbody.append $("<tr><td>#{companyLink(company)}</td><td>#{year.join(", ")}</td></tr>")
 
 companyLink = (company) ->
-  "<a href=\"#{HOST}/#{company}\">#{company}</a>"
+  "<a class='text-light' href=\"#{HOST}/#{company}\">#{company}</a>"
