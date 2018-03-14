@@ -80,4 +80,7 @@ addFactoryCard = (factory, $accordion) ->
   $accordion.append($card)
 
 addRow = (tbody, company, year) ->
-  tbody.append $("<tr><td>#{company}</td><td>#{year.join(", ")}</td></tr>")
+  tbody.append $("<tr><td>#{companyLink(company)}</td><td>#{year.join(", ")}</td></tr>")
+
+companyLink = (company) ->
+  "<a href=\"#{HOST}/#{company}\">#{company}</a>"
