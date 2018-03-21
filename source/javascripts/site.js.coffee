@@ -1,6 +1,6 @@
 $.fn.select2.defaults.set("theme", "bootstrap")
 
-HOST = "http://wikirate.org"
+HOST = "http://staging.wikirate.org"
 METRIC_URL = "#{HOST}/Clean_Clothes_Campaign+Supplier_of"
 COUNTRY_OPTIONS_URL = "#{HOST}/jurisdiction.json?view=select2"
 
