@@ -1,8 +1,9 @@
 $.fn.select2.defaults.set("theme", "bootstrap")
 
-HOST = "http://staging.wikirate.org"
-METRIC_URL = "#{HOST}/:commons_supplier_of"
-COUNTRY_OPTIONS_URL = "#{HOST}/jurisdiction.json?view=select2"
+API_HOST = "http://staging.wikirate.org"
+LINK_TARGET_HOST = "http://wikirate.org"
+METRIC_URL = "#{API_HOST}/:commons_supplier_of"
+COUNTRY_OPTIONS_URL = "#{API_HOST}/jurisdiction.json?view=select2"
 
 EMPTY_RESULT = "<div class='alert alert-info'>no result</div>"
 
@@ -62,7 +63,7 @@ factorySearchURL = ->
   selected = $("#country-select").select2("data")
   if (selected.length > 0)
     country_code = selected[0].id
-  "#{HOST}/company.json?view=search_factories&keyword=#{keyword}&country_code=#{country_code}"
+  "#{API_HOST}/company.json?view=search_factories&keyword=#{keyword}&country_code=#{country_code}"
 
 suppliedCompaniesSearchURL = (elem) ->
   factory = elem.data("company-url-key")
@@ -83,4 +84,4 @@ addRow = (tbody, company, year) ->
   tbody.append $("<tr><td>#{companyLink(company)}</td><td>#{year.join(", ")}</td></tr>")
 
 companyLink = (company) ->
-  "<a class='text-light' href=\"#{HOST}/#{company}\">#{company}</a>"
+  "<a class='text-light' href=\"#{LINK_TARGET_HOST}/#{company}\">#{company}</a>"
