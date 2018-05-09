@@ -1,6 +1,6 @@
 $.fn.select2.defaults.set("theme", "bootstrap")
 
-API_HOST = "https://staging.wikirate.org"
+API_HOST = "https://wikirate.org"
 LINK_TARGET_HOST = "https://wikirate.org"
 METRIC_URL = "#{API_HOST}/:commons_supplier_of"
 COUNTRY_OPTIONS_URL = "#{API_HOST}/jurisdiction.json?view=select2"
