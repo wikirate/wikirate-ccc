@@ -32,8 +32,9 @@ $(document).ready ->
 
 
 updateFactoryList = ->
+  addLoader()
   $.ajax(url: factorySearchURL(), dataType: "json").done((data) ->
-    header = "Found #{data.length} factor#{if data.length == 1 then "y" else "ies"}"
+    header = "(Found #{data.length} factor#{if data.length == 1 then "y" else "ies"})"
     $("._result-header").text(header)
     $accordion = $("#search-result-accordion")
     $accordion.empty()
@@ -85,3 +86,6 @@ addRow = (tbody, company, year) ->
 
 companyLink = (company) ->
   "<a class='text-light' href=\"#{LINK_TARGET_HOST}/#{company}\">#{company}</a>"
+
+addLoader = (xhr) ->
+  $("._result-header").html("<span class='loading'></span>")
