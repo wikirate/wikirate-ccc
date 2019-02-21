@@ -15,4 +15,6 @@ group :development do
   gem 'capistrano-rvm'
   gem "capistrano-bundler"
   gem "selenium-webdriver", "3.8.0"
+  gem "ed25519", "~> 1.2"
+  gem "bcrypt_pbkdf",  "~> 1"
 end
