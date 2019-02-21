@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'middleman', '~> 4.2'
-gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman', '~> 4.3'
+gem 'middleman-autoprefixer', '~> 2.10'
 gem 'middleman-livereload'
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 
 group :development do
-  gem 'rake', '~> 10.4'
+  gem 'rake', '~> 12.3'
   gem 'rspec', '~> 3.4'
   gem 'capybara', '~> 2.5'
   gem 'cucumber'
