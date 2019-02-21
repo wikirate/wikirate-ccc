@@ -18,7 +18,7 @@ Feature: search information about suppliers
   Scenario: search by country
     When I search for country "California"
     Then I should see "3D Systems" in the factory list
-    And I should see "Callaway Golf Company" in the factory list
+    And I should see "Nicewell Industry" in the factory list
     When I open "3D Systems"
     Then I should see that it supplied "The Walt Disney Company" in "2016"
 
@@ -26,5 +26,5 @@ Feature: search information about suppliers
     When I search for name "Sys"
     And I search for country "California"
     Then I should see "3D Systems" in the factory list
-    And I should not see "Callaway Golf Company" in the factory list
+    And I should not see "Nicewell Industry" in the factory list
 

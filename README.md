@@ -38,8 +38,14 @@ The command returns a url where you can access the site.
 Middleman automatically picks up source changes and refreshes
 the site in the browser.
 
-### deploy to wikirate server
+### run tests
 ``` 
+bundle exec cucumber
+```
+
+### deploy to wikirate server
+```
 bundle exec cap production deploy
 ```
+
 
