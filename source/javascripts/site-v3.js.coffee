@@ -1,4 +1,4 @@
-$.fn.select2.defaults.set("theme", "bootstrap")
+$.fn.select2.defaults.set "theme", "bootstrap"
 
 API_HOST = "https://wikirate.org"
 LINK_TARGET_HOST = "https://wikirate.org"
@@ -28,7 +28,6 @@ $(document).ready ->
 
   if params.has('background')
     $('body').css("background", params.get("background"))
-
 
 
 updateFactoryList = ->
