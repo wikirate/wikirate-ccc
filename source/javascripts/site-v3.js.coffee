@@ -1,6 +1,8 @@
 $.fn.select2.defaults.set "theme", "bootstrap"
 
 API_HOST = "https://wikirate.org"
+wikirateApiAuth = null
+
 LINK_TARGET_HOST = "https://wikirate.org"
 COUNTRY_OPTIONS_URL = "/data/wikirate_countries.json"
 
@@ -50,8 +52,13 @@ loadCountrySearch = () ->
 countrySearchOptions = (data) ->
   opts = []
   $.each data, (_i, hash) ->
-    opts.push { id: hash.code, text: hash.name }
-  opts
+    opts.push { id: hash.code, text: hash.name, upper: hash.name.toUpperCase() }
+
+  opts.sort (a, b) ->
+    if a.upper > b.upper
+      1
+    else
+      -1
 
 updateFactoryList = ->
   keyword = $("#keyword-input").val()
