@@ -1,10 +1,10 @@
 $.fn.select2.defaults.set "theme", "bootstrap"
 
-API_HOST = "https://dev.wikirate.org"
+API_HOST = "https://wikirate.org"
 LINK_TARGET_HOST = "https://wikirate.org"
 COUNTRY_OPTIONS_URL = "/data/wikirate_countries.json"
 
-EMPTY_RESULT = "<div class='alert alert-info'>no result</div>"
+# EMPTY_RESULT = "<div class='alert alert-info'>no result</div>"
 
 METRICS = {
   supplierOf: 2929015,
@@ -12,7 +12,9 @@ METRICS = {
   country: 6126450
 }
 
-wikirateApiAuth = "wikirate:wikirat"
+# API_HOST = "https://dev.wikirate.org"
+# wikirateApiAuth = "wikirate:wikirat"
+
 if wikirateApiAuth
   $.ajaxSetup
     beforeSend: (xhr) ->
