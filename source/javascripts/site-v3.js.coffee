@@ -1,7 +1,7 @@
 $.fn.select2.defaults.set "theme", "bootstrap"
 
-API_HOST = "https://wikirate.org"
-wikirateApiAuth = null
+# API_HOST = "https://wikirate.org"
+# wikirateApiAuth = null
 
 LINK_TARGET_HOST = "https://wikirate.org"
 COUNTRY_OPTIONS_URL = "/data/wikirate_countries.json"
@@ -14,8 +14,8 @@ METRICS = {
   country: 6126450
 }
 
-# API_HOST = "https://dev.wikirate.org"
-# wikirateApiAuth = "wikirate:wikirat"
+API_HOST = "https://dev.wikirate.org"
+wikirateApiAuth = "wikirate:wikirat"
 
 if wikirateApiAuth
   $.ajaxSetup
@@ -69,10 +69,16 @@ updateFactoryList = ->
     addLoader()
     updateFactoryListAjax(keyword, country, accordion)
 
+
+factoriesFoundText = (count) ->
+  length = count
+  length += "+" if count == 1000
+  noun = "factor#{if count == 1 then 'y' else 'ies'}"
+  "(Found #{length} #{noun})"
+
 updateFactoryListAjax = (keyword, country, accordion) ->
   $.ajax(url: factorySearchURL(keyword, country), dataType: "json").done (data) ->
-    header = "(Found #{data.length} factor#{if data.length == 1 then "y" else "ies"})"
-    $("._result-header").text(header)
+    $("._result-header").text(factoriesFoundText(data.length))
     if data.length == 0
 # $accordion.append(EMPTY_RESULT)
     else
