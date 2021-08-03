@@ -52,7 +52,7 @@ loadCountrySearch = () ->
 countrySearchOptions = (data) ->
   opts = []
   $.each data, (_i, hash) ->
-    opts.push { id: hash.code, text: hash.name, upper: hash.name.toUpperCase() }
+    opts.push { id: hash.name, text: hash.name, upper: hash.name.toUpperCase() }
 
   opts.sort (a, b) ->
     if a.upper > b.upper
