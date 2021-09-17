@@ -1,10 +1,10 @@
 set :application, 'ccc.wikirate.org'
 set :repo_url, 'https://github.com/wikirate/wikirate-ccc.git'
-set :branch, 'master'
+set :branch, 'main'
 
 set :deploy_to, '/srv/wikirate_ccc'
 
-set :rvm_custom_path, '/usr/local/rvm'
+# set :rvm_custom_path, '/usr/local/rvm'
 
 # set :scm, :middleman
 
