@@ -14,8 +14,8 @@ METRICS = {
   country: 6126450
 }
 
-API_HOST = "https://dev.wikirate.org"
-wikirateApiAuth = "wikirate:wikirat"
+API_HOST = "https://wikirate.org"
+# wikirateApiAuth = "wikirate:wikirat"
 
 if wikirateApiAuth
   $.ajaxSetup
