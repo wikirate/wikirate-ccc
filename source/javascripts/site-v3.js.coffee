@@ -1,7 +1,6 @@
 $.fn.select2.defaults.set "theme", "bootstrap"
 
 # API_HOST = "https://wikirate.org"
-# wikirateApiAuth = null
 
 LINK_TARGET_HOST = "https://wikirate.org"
 COUNTRY_OPTIONS_URL = "/data/wikirate_countries.json"
@@ -15,6 +14,7 @@ METRICS = {
 }
 
 API_HOST = "https://wikirate.org"
+wikirateApiAuth = null
 # wikirateApiAuth = "wikirate:wikirat"
 
 if wikirateApiAuth
